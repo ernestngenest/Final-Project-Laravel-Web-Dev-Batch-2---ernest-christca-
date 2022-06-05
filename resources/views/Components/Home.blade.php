@@ -11,33 +11,33 @@
         </div>
 
         <div class="col-md-5  ms-5 p-5 justify-content-center">
-            <img src="asset/jumbo2.png" alt="ernest">
+            <img src="assets/jumbo2.png" alt="ernest">
         </div>
     </div>
     <div class="cus-container mx-2" style="background-color: rgba(28, 57, 101, 1);">
     <div class="card ">
-        <img class="img-1" src="./asset/card/1.png" alt="1">
+        <img class="img-1" src="./assets/card/1.png" alt="1">
         <div class="intro">
         <h1>Material</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
         </div>
     </div>
     <div class="card">
-        <img class="img-2" src="./asset/card/1.png" alt="1">
+        <img class="img-2" src="./assets/card/1.png" alt="1">
         <div class="intro">
         <h1>Material</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
         </div>
     </div>
     <div class="card">
-        <img class="img-3" src="./asset/card/1.png" alt="1">
+        <img class="img-3" src="./assets/card/1.png" alt="1">
         <div class="intro">
         <h1>Material</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
         </div>
     </div>
     <div class="card">
-        <img class="img-3" src="./asset/card/1.png" alt="1">
+        <img class="img-3" src="./assets/card/1.png" alt="1">
         <div class="intro">
         <h1>Material</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
