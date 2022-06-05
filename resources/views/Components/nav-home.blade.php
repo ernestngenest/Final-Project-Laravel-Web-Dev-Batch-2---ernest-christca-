@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg bg-light p-0 m-0">
+    <div class="container-fluid" style="background-color: rgba(28, 57, 101, 1);">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="">
+        <div class="logo"><img src="asset/build-logo.png" alt="build"></div>
+        </div>
+        <div class="collapse navbar-collapse justify-content-center"  id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="#">AboutUs</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="#">ContactUs</a>
+            </li>
+        </ul>
+        </div>
+        <div class="d-flex">
+        <div class="sign-in">
+            <a href="#" class="  btn btn-outline-light my-3 mx-3 fs-4">Sign in</a>
+        </div>
+        <div class="get-started">
+            <a href="#" class="   btn btn-outline-light my-3 mx-3 fs-4">Get Started</a>
+        </div>
+        </div>
+    </div>
+</nav>
