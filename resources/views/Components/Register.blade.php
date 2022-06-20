@@ -5,7 +5,7 @@
         <div class="col-md-12 rounded">
             <div class="row">
                 <div class="col-lg-6 p-0 m-0">
-                    <div class="row h-100 py-4 p-5 text-white bg-dark rounded-3 justify-content-center align-items-center">
+                    <div class="row h-100 py-4 p-5 text-white rounded-3 justify-content-center align-items-center"style="background-color:rgb(25,57,101);">
                         <div class="row justify-content-center py-2">
                             <div class="col-md-9 text-end ms-5 p-3">
                                 <div class="row">
@@ -32,7 +32,7 @@
                                     <input type="password" class="form-control rounded-pill" name = "password" id="exampleInputPassword1" placeholder="password">
                                 </div>
                                 <div class="form-group mb-4 py-1">
-                                    <input type="password" class="form-control rounded-pill" name = "re-password" id="exampleInputPassword1" placeholder="Confirm Password">
+                                    <input type="password" class="form-control rounded-pill" name = "password_confirmation" id="exampleInputPassword1" placeholder="Confirm Password">
                                 </div>
                                 <div class="text-center">
                                     <button class="btn btn-outline-light rounded-pill w-25 text-center" type="submit">Register</button>

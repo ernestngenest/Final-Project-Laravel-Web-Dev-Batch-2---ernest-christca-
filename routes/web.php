@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +20,10 @@ Route::get('/', function () {
     return view('Components/Home', [
         'status' => 'Home'
     ]);
+})->name('home');
+Route::prefix('/auth')->group(function () {
+    Route::post('/register', [RegisterController::class, 'regis'])->middleware('guest');
+    Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
+    Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+    Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
 });
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'regis'])->middleware('guest');
-Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
