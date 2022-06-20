@@ -53,11 +53,17 @@
                                     <button class="btn btn-outline-light rounded-pill w-25 text-center" type="submit">Register</button>
                                 </div>
                             </form>
+                            <div class="row justify-content-center p-0 m-0">
+                                <div class="col-md-12 text-center">
+                                    <span class="text-white">Already have an account?</span>
+                                    <a href="/auth/login" class="text-success text-decoration-none">Login</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex p-0 m-0">
-                    <img src="{{ asset('assets/Register/Register') }}" class= " flex-fill" alt="">
+                    <img src="{{ asset('assets/Register/Register.png') }}" class= " flex-fill" alt="">
                 </div>
             </div>
         </div>

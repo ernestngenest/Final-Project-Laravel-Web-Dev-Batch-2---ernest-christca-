@@ -21,7 +21,12 @@
                 </ul>
             </div>
             @auth
-
+                <form action="/auth/logout" class="d-flex" method="POST">
+                    @csrf
+                    <div class="sign-in">
+                        <button class="btn btn-outline-light my-3 mx-3 fs-4" type="submit">Log Out</button>
+                    </div>
+                </form>
             @else
                 <div class="d-flex">
                     <div class="sign-in">
