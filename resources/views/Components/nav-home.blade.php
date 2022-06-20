@@ -8,7 +8,7 @@
             <div class="logo"><img src="{{ asset('assets/build-logo.png'); }}" alt="build"></div>
             </div>
             @auth
-            
+
                 @else
                 <div class="collapse navbar-collapse justify-content-center"  id="navbarNav">
                     <ul class="navbar-nav">
@@ -25,10 +25,10 @@
                 </div>
                 <div class="d-flex">
                     <div class="sign-in">
-                        <a href="/login" class="  btn btn-outline-light my-3 mx-3 fs-4">Sign in</a>
+                        <a href="/auth/login" class="  btn btn-outline-light my-3 mx-3 fs-4">Sign in</a>
                     </div>
                     <div class="get-started">
-                        <a href="/register" class="   btn btn-outline-light my-3 mx-3 fs-4">Get Started</a>
+                        <a href="/auth/register" class="   btn btn-outline-light my-3 mx-3 fs-4">Get Started</a>
                     </div>
                 </div>
             @endauth
