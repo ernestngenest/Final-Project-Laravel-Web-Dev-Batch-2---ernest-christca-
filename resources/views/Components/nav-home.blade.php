@@ -5,18 +5,18 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="">
-            <div class="logo"><img src="{{ asset('assets/build-logo.png'); }}" alt="build"></div>
+                <div class="logo"><img src="{{ asset('assets/build-logo.png'); }}" alt="build"></div>
             </div>
             <div class="collapse navbar-collapse justify-content-center"  id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="/Home">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="#">AboutUs</a>
+                        <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="/AboutUs">AboutUs</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="#">ContactUs</a>
+                        <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="/ContactUs">ContactUs</a>
                     </li>
                 </ul>
             </div>
