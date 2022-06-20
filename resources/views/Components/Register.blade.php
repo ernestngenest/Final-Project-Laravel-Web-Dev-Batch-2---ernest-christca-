@@ -20,20 +20,35 @@
                                     </div>
                                 </div>
                             </div>
-                            <form action="/register" method="post" enctype="multipart/form-data" class="col-md-8 p-5">
+                            <form action="/auth/register" method="POST" enctype="multipart/form-data" class="col-md-8 p-5">
                                 @csrf
                                 <div class="form-group mb-4 py-1">
-                                    <input type="email" class="form-control rounded-pill" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+                                    <input type="email" class="form-control rounded-pill" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email" value="{{ old('email') }}">
                                 </div>
+                                @error('email')
+                                    <div class="text-danger px-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                                 <div class="form-group mb-4 py-1">
-                                    <input type="text" class="form-control rounded-pill" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Username">
+                                    <input type="text" class="form-control rounded-pill" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Username" value="{{ old('username') }}">
                                 </div>
+                                @error('username')
+                                    <div  class="text-danger px-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                                 <div class="form-group mb-4 py-1">
                                     <input type="password" class="form-control rounded-pill" name = "password" id="exampleInputPassword1" placeholder="password">
                                 </div>
                                 <div class="form-group mb-4 py-1">
-                                    <input type="password" class="form-control rounded-pill" name = "password_confirmation" id="exampleInputPassword1" placeholder="Confirm Password">
+                                    <input type="password" class="form-control rounded-pill  @error('passowrd') is-invalid @enderror" name = "password_confirmation" id="exampleInputPassword1" placeholder="Confirm Password">
                                 </div>
+                                @error('password')
+                                    <div class="px-2 text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                                 <div class="text-center">
                                     <button class="btn btn-outline-light rounded-pill w-25 text-center" type="submit">Register</button>
                                 </div>

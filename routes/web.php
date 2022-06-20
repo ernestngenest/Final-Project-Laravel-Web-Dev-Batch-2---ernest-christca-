@@ -21,9 +21,8 @@ Route::get('/', function () {
         'status' => 'Home'
     ]);
 })->name('home');
-Route::prefix('/auth')->group(function () {
-    Route::post('/register', [RegisterController::class, 'regis'])->middleware('guest');
-    Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
-    Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-    Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
-});
+
+Route::post('/auth/login', [LoginController::class, 'login'])->middleware('guest');
+Route::get('/auth/register', [RegisterController::class, 'index']);
+Route::get('/auth/login', [LoginController::class, 'index'])->middleware('guest');
+Route::post('/auth/register', [RegisterController::class, 'regis']);

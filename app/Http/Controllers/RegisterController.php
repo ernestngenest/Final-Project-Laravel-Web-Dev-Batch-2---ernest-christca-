@@ -17,17 +17,15 @@ class RegisterController extends Controller
     }
     public function regis(Request $request)
     {
-        $validate = $request->validatte([
-            'email' => 'required|email:dns|min:6',
-            'username' => 'required|min:3',
-            'password' => 'required|max:255|min:3|confirmed'
+        $validate = $request->validate([
+            'username' => 'required|max:255',
+            'email' => 'required|email:dns|unique:users',
+            'password' => 'required|min:5|max:255',
         ]);
-        if ($validate->fails()) {
-            return redirect()->back()->withErrors($validate)->withInput();
-        }
-        $validate->password = Hash::make($validate->password);
+        // @dd($request->all());
+        $validate['password'] = Hash::make($validate['password']);
         $user = new User($validate);
         $user->save();
-        return redirect()->route('home')->with('RegisterSuccess', 'Register success');
+        return redirect()->intended('/')->with('RegisterSuccess', 'Register success');
     }
 }
