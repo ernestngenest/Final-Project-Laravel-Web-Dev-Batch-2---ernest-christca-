@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->string('interior_design_name');
-            $table->string('interior_design_description');
+            $table->text('interior_design_description');
             $table->string('interior_design_image');
-            $table->string('interior_design_price');
-            $table->string('interior_design_quantity');
+            $table->integer('interior_design_price');
+            $table->integer('interior_design_quantity');
             $table->timestamp('last_update')->default(now());
             $table->timestamps();
         });

@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\HomeDesign;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class HomeDesignSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class HomeDesignSeeder extends Seeder
      */
     public function run()
     {
-        HomeDesign::factory(50)->create();
+        User::factory(50)->create();
     }
 }

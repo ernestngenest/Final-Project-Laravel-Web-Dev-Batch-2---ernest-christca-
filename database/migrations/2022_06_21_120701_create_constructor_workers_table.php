@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->string('constructor_worker_name');
-            $table->string('constructor_worker_description');
+            $table->text('constructor_worker_description');
             $table->string('constructor_worker_image');
             $table->string('constructor_worker_price');
             $table->string('constructor_worker_quantity');

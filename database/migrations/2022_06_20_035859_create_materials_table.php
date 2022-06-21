@@ -18,7 +18,7 @@ return new class extends Migration
             // $table->foreignId('');
             $table->foreignId('category_id');
             $table->string('material_name');
-            $table->string('material_description');
+            $table->text('material_description');
             $table->string('material_image');
             $table->string('material_price');
             $table->string('material_quantity');

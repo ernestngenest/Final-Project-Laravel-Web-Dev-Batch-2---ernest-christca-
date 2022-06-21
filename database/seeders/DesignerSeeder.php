@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Designer;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DesignerSeeder extends Seeder
 {
@@ -14,6 +15,6 @@ class DesignerSeeder extends Seeder
      */
     public function run()
     {
-        
+        Designer::factory(50)->create();
     }
 }

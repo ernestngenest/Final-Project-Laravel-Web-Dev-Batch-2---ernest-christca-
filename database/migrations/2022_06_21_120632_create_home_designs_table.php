@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->string('home_design_quantity');
             $table->string('home_design_name');
-            $table->string('home_design_description');
+            $table->text('home_design_description');
             $table->string('home_design_image');
             $table->string('home_design_price');
             $table->timestamp('last_update')->default(now());
