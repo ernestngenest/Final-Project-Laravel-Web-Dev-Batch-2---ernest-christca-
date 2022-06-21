@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +22,15 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::post('/auth/login', [LoginController::class, 'login'])->middleware('guest');
-Route::get('/auth/register', [RegisterController::class, 'index']);
-Route::get('/auth/login', [LoginController::class, 'index'])->middleware('guest');
-Route::post('/auth/register', [RegisterController::class, 'regis']);
-Route::post('/auth/logout', [LoginController::class, 'logout']);
+Route::prefix('/auth')->group(function () {
+    Route::middleware('guest')->group(function () {
+        Route::post('/login', [LoginController::class, 'login']);
+        Route::get('/login', [LoginController::class, 'index'])->name('login');
+        Route::get('/register', [RegisterController::class, 'index']);
+        Route::post('/register', [RegisterController::class, 'regis']);
+    });
+    Route::middleware('auth')->group(function () {
+        Route::get('/Home', [DashboardController::class, 'index']);
+        Route::post('/logout', [LoginController::class, 'logout']);
+    });
+});

@@ -15,8 +15,13 @@
                     <li class="nav-item">
                         <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="/AboutUs">AboutUs</a>
                     </li>
+                    @auth
                     <li class="nav-item">
-                        <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="/ContactUs">ContactUs</a>
+                        <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="/ddashboard">Dashboard</a>
+                    </li>
+                    @endauth
+                    <li class="nav-item">
+                        <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="/logout">ContactUs</a>
                     </li>
                 </ul>
             </div>

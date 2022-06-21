@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('materials', function (Blueprint $table) {
+        Schema::create('home_designs', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('');
             $table->foreignId('category_id');
-            $table->string('material_name');
-            $table->string('material_description');
-            $table->string('material_image');
-            $table->string('material_price');
-            $table->string('material_quantity');
+            $table->string('home_design_quantity');
+            $table->string('home_design_name');
+            $table->string('home_design_description');
+            $table->string('home_design_image');
+            $table->string('home_design_price');
             $table->timestamp('last_update')->default(now());
             $table->timestamps();
         });
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materials');
+        Schema::dropIfExists('home_designs');
     }
 };

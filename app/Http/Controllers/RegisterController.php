@@ -26,6 +26,6 @@ class RegisterController extends Controller
         $validate['password'] = Hash::make($validate['password']);
         $user = new User($validate);
         $user->save();
-        return redirect()->intended('/')->with('RegisterSuccess', 'Register success');
+        return redirect()->route('login')->with('RegisterSuccess', 'Register success');
     }
 }
