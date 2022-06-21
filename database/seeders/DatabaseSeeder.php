@@ -9,6 +9,7 @@ use Database\Seeders\DesignerSeeder;
 use Database\Seeders\MaterialSeeder;
 use Database\Seeders\HomeDesignSeeder;
 use Database\Seeders\InteriorDesignSeeder;
+use Database\Seeders\ConstructorWorkerSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
             InteriorDesignSeeder::class,
             MaterialSeeder::class,
             InteriorDesignSeeder::class,
+            ConstructorWorkerSeeder::class,
         ]);
     }
 }

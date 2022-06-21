@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('constructor_workers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id');
-            $table->string('constructor_worker_name');
-            $table->text('constructor_worker_description');
-            $table->string('constructor_worker_image');
-            $table->string('constructor_worker_price');
-            $table->string('constructor_worker_quantity');
+            $table->string('constructor_worker_name')->nullable();
+            $table->text('constructor_worker_description')->nullable();
+            $table->string('constructor_worker_image')->nullable();
+            $table->integer('constructor_worker_price')->nullable();
+            $table->integer('constructor_worker_quantity')->nullable();
             $table->timestamp('last_update')->default(now());
             $table->timestamps();
         });

@@ -26,5 +26,6 @@ class HomeDesignFactory extends Factory
             'home_design_price' => $this->faker->numberBetween(100000),
             'last_update' => now(),
         ];
+
     }
 }
