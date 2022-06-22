@@ -15,6 +15,6 @@ class InteriorDesignSeeder extends Seeder
      */
     public function run()
     {
-        InteriorDesign::factory(50)->create();
+        InteriorDesign::factory(250)->create();
     }
 }

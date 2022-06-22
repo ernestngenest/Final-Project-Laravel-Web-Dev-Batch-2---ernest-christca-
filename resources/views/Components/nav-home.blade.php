@@ -1,4 +1,4 @@
-@if($status === 'Home')
+@if($status === 'Home' || isset($auth_status))
     <nav class="navbar navbar-expand-lg bg-light p-0 m-0">
         <div class="container-fluid" style="background-color: rgba(28, 57, 101, 1);">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +17,7 @@
                     </li>
                     @auth
                     <li class="nav-item">
-                        <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="/ddashboard">Dashboard</a>
+                        <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="/dashboard">Dashboard</a>
                     </li>
                     @endauth
                     <li class="nav-item">

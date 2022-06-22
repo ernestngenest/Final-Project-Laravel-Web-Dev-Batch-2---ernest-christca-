@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,5 @@ Route::prefix('/auth')->group(function () {
         Route::post('/logout', [LoginController::class, 'logout']);
     });
 });
+Route::get('/material', [MaterialController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index']);

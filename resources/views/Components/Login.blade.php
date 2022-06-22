@@ -7,6 +7,11 @@
             <strong>{{ session('LoginError') }}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+    @elseif(@session()->has('RegisterSuccess'))
+        <div class="alert alert-success text-dark alert-dismissible fade show" role="alert">
+            <strong>{{ session('RegisterSuccess') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     @endif
     <div class="col-md-12 rounded">
         <div class="row">
@@ -19,7 +24,7 @@
                         <form action="/auth/login" method="POST" enctype="multipart/form-data" class="col-md-8 p-5">
                             @csrf
                             <div class="form-group py-2">
-                                <input type="email" class="form-control rounded-pill" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+                                <input type="email" class="form-control rounded-pill" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email" value = "@error('email') {{ old('email') }} @enderror">
                             </div>
                             @error('email')
                                 <span class="text-danger px-3" role="alert">

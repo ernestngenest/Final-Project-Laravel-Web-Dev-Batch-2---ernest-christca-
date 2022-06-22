@@ -8,8 +8,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('Components/dashboard', [
-            'status' => 'Home',
+        return view('/dashboard/Components/dashboard', [
+            'status' => 'Dashboard',
+            'auth_status' => 1
         ]);
     }
     public function __construct()
