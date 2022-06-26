@@ -12,4 +12,7 @@ class MaterialController extends Controller
             'status' => 'Material'
         ]);
     }
+    public function show()
+    {
+    }
 }

@@ -5,6 +5,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeDesignController;
+use App\Http\Controllers\InterriorDesignController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +36,11 @@ Route::prefix('/auth')->group(function () {
         Route::get('/Home', [DashboardController::class, 'index']);
         Route::post('/logout', [LoginController::class, 'logout']);
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::prefix('dashboard')->group(function () {
+            Route::get('/material/{id}', [MaterialController::class, 'show']);
+            Route::get('/interrior_designs/{id}', [InterriorDesignController::class, 'show']);
+            Route::get('/home_designs/{id}', [HomeDesignController::class, 'show']);
+        });
     });
 });
 Route::get('/material', [MaterialController::class, 'index']);
