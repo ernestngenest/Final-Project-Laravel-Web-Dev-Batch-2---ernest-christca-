@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 </head>
     <body>
-        @include('Components.nav-home')
+        @include('dashboard.Components.nav-dashboard')
         <div class="container-fluid p-0">
             @yield('content');
         </div>
