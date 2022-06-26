@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -33,8 +34,29 @@ class DashboardController extends Controller
                 ->where('materials.status', 'like', '%' . $request->status . '%')->get();
             $categories->materials = $material;
         }
+        $temp = null;
+        try {
+            $getCategoryName = Category::find($request->category_id);
+            $getCategoryName = $getCategoryName->catergory_name;
+            $rows = [];
+            $temp = null;
+            foreach (explode(' ', $getCategoryName) as $row) {
+                $rows[] = $row;
+            }
+            foreach ($rows as $row) {
+                if ($row == last($rows)) {
+                    $temp .= $row . 's';
+                } else {
+                    $temp .= $row . '_';
+                }
+            }
+        } catch (Exception $e) {
+            $temp = null;
+        }
+        $temp = strtolower($temp);
         $selected_id = [];
         $selected_id['category_id'] = $request->category_id;
+        $selected_id['name'] = $temp;
         $selected_id['status'] = $request;
         return view('/dashboard/Components/dashboard', [
             'status' => 'Dashboard',

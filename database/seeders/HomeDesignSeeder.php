@@ -15,6 +15,6 @@ class HomeDesignSeeder extends Seeder
      */
     public function run()
     {
-        HomeDesign::factory(250)->create();
+        HomeDesign::factory(50)->create();
     }
 }

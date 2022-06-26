@@ -16,7 +16,7 @@ class Category extends Model
     {
         return $this->hasMany(Material::class);
     }
-    public function home_Design()
+    public function home_designs()
     {
         return $this->hasMany(HomeDesign::class);
     }

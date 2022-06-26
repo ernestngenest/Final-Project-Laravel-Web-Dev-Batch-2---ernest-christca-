@@ -15,6 +15,6 @@ class DesignerSeeder extends Seeder
      */
     public function run()
     {
-        Designer::factory(250)->create();
+        Designer::factory(50)->create();
     }
 }

@@ -15,6 +15,6 @@ class ConstructorWorkerSeeder extends Seeder
      */
     public function run()
     {
-        ConstructorWorker::factory(250)->create();
+        ConstructorWorker::factory(50)->create();
     }
 }
