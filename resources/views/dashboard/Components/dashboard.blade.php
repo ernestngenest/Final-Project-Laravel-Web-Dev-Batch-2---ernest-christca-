@@ -72,24 +72,26 @@
             <button class="action-button filter jsFilter"><span>Filter</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
             <div class="filter-menu">
               <label>Category</label>
-                <select>
-                    @foreach ($category as $type)
-                        <option>{{ $type->catergory_name }}</option>
-                    @endforeach
+              <form action="{{ route('dashboard') }}" method="GET">
+                @csrf
+                    <select name="category_id">
+                        <option value = "0" selected>All Categories</option>
+                        @foreach ($category as $type)
+                            <option value="{{ $type->id }}" {{ $type->id == $selected_id['category_id'] ? 'selected' : '' }}>{{ $type->catergory_name }}</option>
+                        @endforeach
                 </select>
               <label>Status</label>
-              <select>
-                <option>All Status</option>
-                <option>Active</option>
-                <option>Disabled</option>
+              <select name="status">
+                <option value = "">All Status</option>
+                <option value ="Active" {{ $selected_id['status'] == 'Active' ? 'selected' : '' }}>Active</option>
+                <option value ="Disable" {{ $selected_id['status'] == 'Disable' ? 'selected' : '' }}>Disabled</option>
               </select>
-              <div class="filter-menu-buttons">
-                <button class="filter-button reset">
-                  Reset
-                </button>
-                <button class="filter-button apply">
-                  Apply
-                </button>
+              <div class="filter-menu-buttons ">
+                <input type="submit" class="filter-button reset" value="Reset">
+                </input>
+                <input type="submit" class="filter-button apply" value="Apply">
+                </input>
+            </form>
               </div>
             </div>
           </div>
@@ -113,6 +115,7 @@
         </div>
 
         {{-- product Row --}}
+        @if($selected_id['category_id'] == 0)
         @foreach ($category as $item)
             @if($item->materials)
                 @foreach ($item->materials as $material)
@@ -184,6 +187,31 @@
                 @endforeach
             @endif
         @endforeach
+        @elseif($selected_id['category_id'] == 1)
+            @if($item)
+                @foreach ($item as $material)
+                <div class="products-row">
+                    <button class="cell-more-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+                    </button>
+                    <div class="product-cell image">
+                        <img src="{{ $material->material_image }}" alt="product">
+                        <span>{{ $material->material_name }}</span>
+                    </div>
+                    <div class="product-cell category"><span class="cell-label">Category:</span>Material</div>
+                    <div class="product-cell status-cell">
+                    <span class="cell-label">Status:</span>
+                    <span class="status {{ $material->status === 'Active' ? ' active' : 'disabled' }}">
+                        {{ $material->status }}
+                    </span>
+                    </div>
+                    <div class="product-cell sales"><span class="cell-label">Sales:</span>{{ $material->material_sold }}</div>
+                    <div class="product-cell stock"><span class="cell-label">Stock:</span>{{ $material->material_quantity }}</div>
+                    <div class="product-cell price"><span class="cell-label">Price:</span>Rp. {{ $material->material_price }}</div>
+                </div>
+                    @endforeach
+            @endif
+        @endif
       </div>
     </div>
   </div>

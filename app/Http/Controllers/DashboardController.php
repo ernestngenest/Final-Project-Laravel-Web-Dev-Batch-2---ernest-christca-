@@ -26,19 +26,23 @@ class DashboardController extends Controller
             )
             ->get();
         $categories =  \App\Models\Category::all();
-        if($request->has('search')){
-            $search = $request->get('search');
+        if ($request->category_id != 0) {
+            $search_category = $request->category_id;
             $material = DB::table('categories')
                 ->join('materials', 'categories.id', '=', 'materials.category_id')
                 ->select('materials.material_name', 'materials.material_price', 'materials.material_price', 'materials.material_image', 'materials.material_description',)
-                ->where('materials.material_name', 'like', '%' . $search . '%')->orWhere('materials.material_description', 'like', '%' . $search . '%')->get();
-            $categories->materials = $material;
+                ->where('materials.status', 'like', '%' . $request->status . '%')->Where('categories.id', '=', $search_category)->get();
+            $categories = $material;
         }
+        $selected_id = [];
+        $selected_id['category_id'] = $request->category_id;
+        $selected_id['status'] = $request->status;
         return view('/dashboard/Components/dashboard', [
             'status' => 'Dashboard',
             'materials' => $material,
             'workers' => $worker,
             'category' => $categories,
+            'selected_id' => $selected_id
         ])->with('success', 'Data berhasil ditambahkan');
     }
 
