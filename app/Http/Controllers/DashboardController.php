@@ -11,20 +11,26 @@ class DashboardController extends Controller
     public function index()
     {
         $material = DB::table('categories')
-        ->join('materials', 'categories.id', '=', 'materials.category_id')
-        ->select( 'materials.material_name', 'materials.material_price' , 'materials.material_price', 'materials.material_image','materials.material_description',)
-        ->get();
+            ->join('materials', 'categories.id', '=', 'materials.category_id')
+            ->select('materials.material_name', 'materials.material_price', 'materials.material_price', 'materials.material_image', 'materials.material_description',)
+            ->get();
 
         $worker = DB::table('categories')
-        ->join('constructor_workers', 'categories.id', '=', 'constructor_workers.category_id')
-        ->select('constructor_workers.constructor_worker_name', 'constructor_workers.constructor_worker_image' ,
-        'constructor_workers.constructor_worker_price' , 'constructor_workers.constructor_worker_quantity')
-        ->get();
+            ->join('constructor_workers', 'categories.id', '=', 'constructor_workers.category_id')
+            ->select(
+                'constructor_workers.constructor_worker_name',
+                'constructor_workers.constructor_worker_image',
+                'constructor_workers.constructor_worker_price',
+                'constructor_workers.constructor_worker_quantity'
+            )
+            ->get();
 
         return view('/dashboard/Components/dashboard', [
             'status' => 'Dashboard',
             'materials' => $material,
-            'workers' => $worker
+            'workers' => $worker,
+            'category' => \App\Models\Category::all(),
+            
         ])->with('success', 'Data berhasil ditambahkan');
     }
 
