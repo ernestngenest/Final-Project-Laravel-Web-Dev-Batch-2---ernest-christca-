@@ -2,184 +2,300 @@
 
 
 @section('content')
-      <header>
-            <!-- Sidebar -->
-            <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-              <div class="position-sticky ">
-                <div class="list-group list-group-flush mx-3 mt-4">
-                  <!-- Collapse 1 -->
-                  <a class="list-group-item list-group-item-action py-2 ripple" aria-current="true"
-                    data-mdb-toggle="collapse" href="#collapseExample1" aria-expanded="true"
-                    aria-controls="collapseExample1">
-                    <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Expanded menu</span>
-                  </a>
-                  <!-- Collapsed content -->
-                  <ul id="collapseExample1" class="collapse show list-group list-group-flush">
-                    <li class="list-group-item py-1">
-                      <a href="" class="text-reset">Link</a>
-                    </li>
-                    <li class="list-group-item py-1">
-                      <a href="" class="text-reset">Link</a>
-                    </li>
-                    <li class="list-group-item py-1">
-                      <a href="" class="text-reset">Link</a>
-                    </li>
-                    <li class="list-group-item py-1">
-                      <a href="" class="text-reset">Link</a>
-                    </li>
-                  </ul>
-                  <!-- Collapse 1 -->
-
-                  <!-- Collapse 2 -->
-                  <a class="list-group-item list-group-item-action py-2 ripple" aria-current="true"
-                    data-mdb-toggle="collapse" href="#collapseExample2" aria-expanded="true"
-                    aria-controls="collapseExample2">
-                    <i class="fas fa-chart-area fa-fw me-3"></i><span>Collapsed menu</span>
-                  </a>
-                  <!-- Collapsed content -->
-                  <ul id="collapseExample2" class="collapse list-group list-group-flush">
-                    <li class="list-group-item py-1">
-                      <a href="" class="text-reset">Link</a>
-                    </li>
-                    <li class="list-group-item py-1">
-                      <a href="" class="text-reset">Link</a>
-                    </li>
-                    <li class="list-group-item py-1">
-                      <a href="" class="text-reset">Link</a>
-                    </li>
-                    <li class="list-group-item py-1">
-                      <a href="" class="text-reset">Link</a>
-                    </li>
-                  </ul>
-                  <!-- Collapse 2 -->
-                </div>
-              </div>
-            </nav>
-            <!-- Sidebar -->
-
-            <!-- Navbar -->
-            <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-              <!-- Container wrapper -->
-              <div class="container-fluid">
-                <!-- Toggle button -->
-                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
-                  aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fas fa-bars"></i>
-                </button>
-
-                <!-- Brand -->
-                <a class="navbar-brand" href="#">
-                  <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="25" alt="MDB Logo"
-                    loading="lazy" />
+<div class="layout has-sidebar fixed-sidebar fixed-header">
+    <aside id="sidebar" class="sidebar break-point-lg has-bg-image">
+      <div class="image-wrapper">
+        <img src="https://user-images.githubusercontent.com/25878302/144499035-2911184c-76d3-4611-86e7-bc4e8ff84ff5.jpg" alt="sidebar background" />
+      </div>
+      <div class="sidebar-layout">
+        <div class="sidebar-header">
+          <span style="
+                  text-transform: uppercase;
+                  font-size: 15px;
+                  letter-spacing: 3px;
+                  font-weight: bold;
+                ">Pro Sidebar</span>
+        </div>
+        <div class="sidebar-content">
+          <nav class="menu open-current-submenu">
+            <ul>
+              <li class="menu-item sub-menu">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="ri-vip-diamond-fill"></i>
+                  </span>
+                  <span class="menu-title">Components</span>
+                  <span class="menu-suffix">&#x1F525;</span>
                 </a>
-                <!-- Search form -->
-                <form class="d-none d-md-flex input-group w-auto my-auto">
-                  <input autocomplete="off" type="search" class="form-control rounded"
-                    placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px;" />
-                  <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
-                </form>
-
-                <!-- Right links -->
-                <ul class="navbar-nav ms-auto d-flex flex-row">
-                  <!-- Notification dropdown -->
-                  <li class="nav-item dropdown">
-                    <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
-                      role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                      <i class="fas fa-bell"></i>
-                      <span class="badge rounded-pill badge-notification bg-danger">1</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Some news</a></li>
-                      <li><a class="dropdown-item" href="#">Another news</a></li>
-                      <li>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <!-- Icon -->
-                  <li class="nav-item">
-                    <a class="nav-link me-3 me-lg-0" href="#">
-                      <i class="fas fa-fill-drip"></i>
-                    </a>
-                  </li>
-                  <!-- Icon -->
-                  <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="#">
-                      <i class="fab fa-github"></i>
-                    </a>
-                  </li>
-
-                  <!-- Icon dropdown -->
-                  <li class="nav-item dropdown">
-                    <a
-                      class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                      data-mdb-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <i class="flag-united-kingdom flag m-0"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><i class="flag-united-kingdom flag"></i>English
-                          <i class="fa fa-check text-success ms-2"></i
-                        ></a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <!-- Avatar -->
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
-                      id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle"
-                        height="22" alt="Avatar" loading="lazy" />
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">My profile</a></li>
-                      <li><a class="dropdown-item" href="#">Settings</a></li>
-                      <li><a class="dropdown-item" href="#">Logout</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <!-- Container wrapper -->
-            </nav>
-            <!-- Navbar -->
-          </header>
-          <!--Main Navigation-->
-
-          <!--Main layout-->
-          <main style="margin-top: 58px;">
-            <div class="container pt-4"></div>
-          </main>
+                <div class="sub-menu-list">
+                  <ul>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">Grid</span>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">Layout</span>
+                      </a>
+                    </li>
+                    <li class="menu-item sub-menu">
+                      <a href="#">
+                        <span class="menu-title">Forms</span>
+                      </a>
+                      <div class="sub-menu-list">
+                        <ul>
+                          <li class="menu-item">
+                            <a href="#">
+                              <span class="menu-title">Input</span>
+                            </a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="#">
+                              <span class="menu-title">Select</span>
+                            </a>
+                          </li>
+                          <li class="menu-item sub-menu">
+                            <a href="#">
+                              <span class="menu-title">More</span>
+                            </a>
+                            <div class="sub-menu-list">
+                              <ul>
+                                <li class="menu-item">
+                                  <a href="#">
+                                    <span class="menu-title">CheckBox</span>
+                                  </a>
+                                </li>
+                                <li class="menu-item">
+                                  <a href="#">
+                                    <span class="menu-title">Radio</span>
+                                  </a>
+                                </li>
+                                <li class="menu-item sub-menu">
+                                  <a href="#">
+                                    <span class="menu-title">Want more ?</span>
+                                    <span class="menu-suffix">&#x1F914;</span>
+                                  </a>
+                                  <div class="sub-menu-list">
+                                    <ul>
+                                      <li class="menu-item">
+                                        <a href="#">
+                                          <span class="menu-prefix">&#127881;</span>
+                                          <span class="menu-title">You made it </span>
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu-item sub-menu">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="ri-bar-chart-2-fill"></i>
+                  </span>
+                  <span class="menu-title">Charts</span>
+                </a>
+                <div class="sub-menu-list">
+                  <ul>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">Pie chart</span>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">Line chart</span>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">Bar chart</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu-item sub-menu">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="ri-shopping-cart-fill"></i>
+                  </span>
+                  <span class="menu-title">E-commerce</span>
+                </a>
+                <div class="sub-menu-list">
+                  <ul>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">Products</span>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">Orders</span>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">credit card</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu-item sub-menu">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="ri-global-fill"></i>
+                  </span>
+                  <span class="menu-title">Maps</span>
+                </a>
+                <div class="sub-menu-list">
+                  <ul>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">Google maps</span>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">Open street map</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu-item sub-menu">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="ri-brush-3-fill"></i>
+                  </span>
+                  <span class="menu-title">Theme</span>
+                </a>
+                <div class="sub-menu-list">
+                  <ul>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">Dark</span>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#">
+                        <span class="menu-title">Light</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu-item">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="ri-book-2-fill"></i>
+                  </span>
+                  <span class="menu-title">Documentation</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="ri-calendar-fill"></i>
+                  </span>
+                  <span class="menu-title">Calendar</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="ri-service-fill"></i>
+                  </span>
+                  <span class="menu-title">Examples</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sidebar-footer"><span>Sidebar footer</span></div>
+      </div>
+    </aside>
+    <div id="overlay" class="overlay"></div>
+    <div class="layout">
+      <header class="header">
+        <a id="btn-collapse" href="#">
+          <i class="ri-menu-line ri-xl"></i>
+        </a>
+        <a id="btn-toggle" href="#" class="sidebar-toggler break-point-lg">
+          <i class="ri-menu-line ri-xl"></i>
+        </a>
+      </header>
+      <main class="content">
+        <div>
+          <h1>Pro Sidebar</h1>
+          <p>
+            Responsive layout with advanced sidebar menu built with SCSS and vanilla Javascript
+          </p>
+          <p>
+            Full Code and documentation available on  <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">Github</a>
+          </p>
+          <div>
+            <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
+              <img alt="GitHub stars" src="https://img.shields.io/github/stars/azouaoui-med/pro-sidebar-template?style=social" />
+            </a>
+            <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
+              <img alt="GitHub forks" src="https://img.shields.io/github/forks/azouaoui-med/pro-sidebar-template?style=social" />
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2>Features</h2>
+          <ul>
+            <li>Fully responsive</li>
+            <li>Collapsable sidebar</li>
+            <li>Multi level menu</li>
+            <li>RTL support</li>
+            <li>Customizable</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Resources</h2>
+          <ul>
+            <li>
+              <a target="_blank" href="https://github.com/azouaoui-med/css-pro-layout">
+                Css Pro Layout</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/popperjs/popper-core"> Popper Core</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://remixicon.com/"> Remix Icons</a>
+            </li>
+          </ul>
+        </div>
+        <footer class="footer">
+          <small style="margin-bottom: 20px; display: inline-block">
+            © 2022 made with
+            <span style="color: red; font-size: 18px">&#10084;</span> by -
+            <a target="_blank" href="https://azouaoui.netlify.com"> Mohamed Azouaoui </a>
+          </small>
+          <br />
+          <div>
+            <a href="https://github.com/azouaoui-med" target="_blank" rel="noopener noreferrer">
+              <img alt="GitHub followers" src="https://img.shields.io/github/followers/azouaoui-med?label=github&style=social" />
+            </a>
+            <a href="https://twitter.com/azouaoui_med" target="_blank" rel="noopener noreferrer">
+              <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/azouaoui_med?label=twitter&style=social" />
+            </a>
+          </div>
+        </footer>
+      </main>
+      <div class="overlay"></div>
+    </div>
+  </div>
 @endsection
 
