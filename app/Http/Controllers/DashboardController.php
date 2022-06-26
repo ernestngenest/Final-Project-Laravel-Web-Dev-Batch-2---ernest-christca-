@@ -31,12 +31,12 @@ class DashboardController extends Controller
             $material = DB::table('categories')
                 ->join('materials', 'categories.id', '=', 'materials.category_id')
                 ->select('materials.material_name', 'materials.material_price', 'materials.material_price', 'materials.material_image', 'materials.material_description',)
-                ->where('materials.status', 'like', '%' . $request->status . '%')->Where('categories.id', '=', $search_category)->get();
-            $categories = $material;
+                ->where('materials.status', 'like', '%' . $request->status . '%')->get();
+            $categories->materials = $material;
         }
         $selected_id = [];
         $selected_id['category_id'] = $request->category_id;
-        $selected_id['status'] = $request->status;
+        $selected_id['status'] = $request;
         return view('/dashboard/Components/dashboard', [
             'status' => 'Dashboard',
             'materials' => $material,
