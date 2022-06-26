@@ -17,7 +17,7 @@
                     </li>
                     @auth
                     <li class="nav-item">
-                        <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="/dashboard">Dashboard</a>
+                        <a class="nav-link active my-3 mx-5 text-light fs-2" aria-current="page" href="/auth/dashboard">Dashboard</a>
                     </li>
                     @endauth
                     <li class="nav-item">
