@@ -25,8 +25,10 @@ class MaterialFactory extends Factory
             'material_name' => $this->faker->name(),
             'material_description' => $this->faker->paragraph(3, mt_rand(3, 7)),
             'material_image' => $this->faker->imageUrl(500, 500),
-            'material_price' => $this->faker->numberBetween(100000, 2147483647),
-            'material_quantity' => $this->faker->numberBetween(100000, 2147483647),
+            'material_price' => $this->faker->numberBetween(100000, 20000000),
+            'status' => $this->faker->randomElement(['Active', 'Disable']),
+            'material_sold' => $this->faker->numberBetween(0, 1000),
+            'material_quantity' => $this->faker->randomNumber(3, 1000),
             'last_update' => now(),
         ];
     }

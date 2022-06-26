@@ -63,7 +63,10 @@
         <button class="app-content-headerButton">Add Product</button>
       </div>
       <div class="app-content-actions">
-        <input class="search-bar" placeholder="Search..." type="text">
+        <form action="/auth/dashboard" method="post" class="search">
+            @csrf
+            <input class="search-bar" name="search" placeholder="Search..." type="text">
+        </form>
         <div class="app-content-actions-wrapper">
           <div class="filter-button-wrapper">
             <button class="action-button filter jsFilter"><span>Filter</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
@@ -110,24 +113,77 @@
         </div>
 
         {{-- product Row --}}
-        <div class="products-row">
-          <button class="cell-more-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
-          </button>
-            <div class="product-cell image">
-              <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="product">
-              <span>Ocean</span>
-            </div>
-          <div class="product-cell category"><span class="cell-label">Category:</span>Furniture</div>
-          <div class="product-cell status-cell">
-            <span class="cell-label">Status:</span>
-            <span class="status active">Active</span>
-          </div>
-          <div class="product-cell sales"><span class="cell-label">Sales:</span>11</div>
-          <div class="product-cell stock"><span class="cell-label">Stock:</span>36</div>
-          <div class="product-cell price"><span class="cell-label">Price:</span>$560</div>
-        </div>
-
+        @foreach ($category as $item)
+            @if($item->materials)
+                @foreach ($item->materials as $material)
+                <div class="products-row">
+                    <button class="cell-more-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+                    </button>
+                    <div class="product-cell image">
+                        <img src="{{ $material->material_image }}" alt="product">
+                        <span>{{ $material->material_name }}</span>
+                    </div>
+                    <div class="product-cell category"><span class="cell-label">Category:</span>Material</div>
+                    <div class="product-cell status-cell">
+                    <span class="cell-label">Status:</span>
+                    <span class="status {{ $material->status === 'Active' ? ' active' : 'disabled' }}">
+                        {{ $material->status }}
+                    </span>
+                    </div>
+                    <div class="product-cell sales"><span class="cell-label">Sales:</span>{{ $material->material_sold }}</div>
+                    <div class="product-cell stock"><span class="cell-label">Stock:</span>{{ $material->material_quantity }}</div>
+                    <div class="product-cell price"><span class="cell-label">Price:</span>Rp. {{ $material->material_price }}</div>
+                </div>
+                @endforeach
+            @endif
+            @if($item->home_Design)
+                @foreach ($item->home_Design as $home)
+                <div class="products-row">
+                    <button class="cell-more-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+                    </button>
+                    <div class="product-cell image">
+                        <img src="{{ $home->home_design_image }}" alt="product">
+                        <span>{{ $home->home_design_name }}</span>
+                    </div>
+                    <div class="product-cell category"><span class="cell-label">Category:</span>Home Design</div>
+                    <div class="product-cell status-cell">
+                    <span class="cell-label">Status:</span>
+                    <span class="status {{ $home->home_design_status === 'Active' ? ' active' : 'disabled' }}">
+                        {{ $home->home_design_status }}
+                    </span>
+                    </div>
+                    <div class="product-cell sales"><span class="cell-label">Sales:</span>{{ $home->home_design_sold }}</div>
+                    <div class="product-cell stock"><span class="cell-label">Stock:</span>{{ $home->home_design_quantity }}</div>
+                    <div class="product-cell price"><span class="cell-label">Price:</span>Rp. {{ $home->home_design_price }}</div>
+                </div>
+                @endforeach
+            @endif
+            @if($item->interior_designs)
+                @foreach ($item->interior_designs as $interior)
+                <div class="products-row">
+                    <button class="cell-more-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+                    </button>
+                    <div class="product-cell image">
+                        <img src="{{ $interior->interior_design_image }}" alt="product">
+                        <span>{{ $interior->interior_design_name }}</span>
+                    </div>
+                    <div class="product-cell category"><span class="cell-label">Category:</span>Interrior Design</div>
+                    <div class="product-cell status-cell">
+                    <span class="cell-label">Status:</span>
+                    <span class="status {{ $interior->interior_design_status === 'Active' ? ' active' : 'disabled' }}">
+                        {{ $interior->interior_design_status }}
+                    </span>
+                    </div>
+                    <div class="product-cell sales"><span class="cell-label">Sales:</span>{{ $interior->interior_design_sold }}</div>
+                    <div class="product-cell stock"><span class="cell-label">Stock:</span>{{ $interior->interior_design_quantity }}</div>
+                    <div class="product-cell price"><span class="cell-label">Price:</span>Rp. {{ $interior->interior_design_price }}</div>
+                </div>
+                @endforeach
+            @endif
+        @endforeach
       </div>
     </div>
   </div>

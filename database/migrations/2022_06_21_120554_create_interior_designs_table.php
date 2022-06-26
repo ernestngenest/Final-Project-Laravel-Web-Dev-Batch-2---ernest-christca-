@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('interior_design_image');
             $table->integer('interior_design_price');
             $table->integer('interior_design_quantity');
+            $table->string('interior_design_sold');
+            $table->enum('interior_design_status', ['Active', 'Disable'])->default('Disable');
             $table->timestamp('last_update')->default(now());
             $table->timestamps();
         });

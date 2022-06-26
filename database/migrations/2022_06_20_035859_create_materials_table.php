@@ -21,7 +21,9 @@ return new class extends Migration
             $table->text('material_description');
             $table->string('material_image');
             $table->string('material_price');
+            $table->enum('status', ['Active', 'Disable'])->default('Disable');
             $table->string('material_quantity');
+            $table->string('material_sold');
             $table->timestamp('last_update')->default(now());
             $table->timestamps();
         });

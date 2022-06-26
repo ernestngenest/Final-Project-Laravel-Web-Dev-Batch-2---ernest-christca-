@@ -21,6 +21,8 @@ return new class extends Migration
             $table->text('home_design_description');
             $table->string('home_design_image');
             $table->string('home_design_price');
+            $table->string('home_design_sold');
+            $table->enum('home_design_status', ['Active', 'Disable'])->default('Disable');
             $table->timestamp('last_update')->default(now());
             $table->timestamps();
         });

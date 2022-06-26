@@ -19,13 +19,14 @@ class HomeDesignFactory extends Factory
         $category_count = \App\Models\Category::count();
         return [
             'category_id' => $this->faker->randomNumber(1, $category_count),
-            'home_design_quantity' => $this->faker->randomNumber(1, 100),
+            'home_design_quantity' => $this->faker->randomNumber(3, 1000),
             'home_design_name' => $this->faker->name(),
             'home_design_description' => $this->faker->paragraph(2, mt_rand(3, 6)),
             'home_design_image' => $this->faker->imageUrl(),
-            'home_design_price' => $this->faker->numberBetween(100000),
+            'home_design_sold' => $this->faker->numberBetween(0, 1000),
+            'home_design_status' => $this->faker->randomElement(['Active', 'Disable']),
+            'home_design_price' => $this->faker->numberBetween(10000000),
             'last_update' => now(),
         ];
-
     }
 }

@@ -30,7 +30,6 @@ class DashboardController extends Controller
             'materials' => $material,
             'workers' => $worker,
             'category' => \App\Models\Category::all(),
-            
         ])->with('success', 'Data berhasil ditambahkan');
     }
 
