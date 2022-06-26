@@ -63,7 +63,7 @@
         <button class="app-content-headerButton">Add Product</button>
       </div>
       <div class="app-content-actions">
-        <form action="/auth/dashboard" method="post" class="search">
+        <form action="/auth/dashboard" method="GET" class="search">
             @csrf
             <input class="search-bar" name="search" placeholder="Search..." type="text">
         </form>
