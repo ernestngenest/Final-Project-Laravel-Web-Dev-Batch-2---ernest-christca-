@@ -27,7 +27,6 @@ class DashboardController extends Controller
             ->get();
         $categories =  \App\Models\Category::all();
         if ($request->category_id != 0) {
-            $search_category = $request->category_id;
             $material = DB::table('categories')
                 ->join('materials', 'categories.id', '=', 'materials.category_id')
                 ->select('materials.material_name', 'materials.material_price', 'materials.material_price', 'materials.material_image', 'materials.material_description',)
