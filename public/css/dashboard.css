@@ -175,8 +175,8 @@ body {
   color: var(--sidebar-main-color);
 }
 .app-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 5rem;
+  height: 5rem;
 }
 
 .app-content {
