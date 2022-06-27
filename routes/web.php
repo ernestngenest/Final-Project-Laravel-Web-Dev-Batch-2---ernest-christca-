@@ -38,7 +38,7 @@ Route::prefix('/auth')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::prefix('dashboard')->group(function () {
             Route::get('/material/{id}', [MaterialController::class, 'show']);
-            Route::get('/interrior_designs/{id}', [InterriorDesignController::class, 'show']);
+            Route::get('/interrior/{id}', [InterriorDesignController::class, 'show']);
             Route::get('/home_designs/{id}', [HomeDesignController::class, 'show']);
         });
     });
