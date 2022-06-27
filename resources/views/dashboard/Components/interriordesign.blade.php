@@ -110,23 +110,23 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
             </button>
             <div class="product-cell image">
-                <img src="{{ $material->material_image }}" alt="product">
-                <span>{{ $material->material_name }}</span>
+                <img src="{{ $interior->interior_design_image }}" alt="product">
+                <span>{{ $interior->interior_design_name }}</span>
             </div>
-            <div class="product-cell category"><span class="cell-label">Category:</span>Material</div>
+            <div class="product-cell category"><span class="cell-label">Category:</span>Interior Design</div>
             <div class="product-cell status-cell">
             <span class="cell-label">Status:</span>
-            <span class="status {{ $material->material_status === 'Active' ? ' active' : 'disabled' }}">
-                {{ $material->material_status }}
+            <span class="status {{ $interior->interior_design_status === 'Active' ? ' active' : 'disabled' }}">
+                {{ $interior->interior_design_status }}
             </span>
             </div>
-            <div class="product-cell sales"><span class="cell-label">Sales:</span>{{ $material->material_sold }}</div>
-            <div class="product-cell stock"><span class="cell-label">Stock:</span>{{ $material->material_quantity }}</div>
-            <div class="product-cell price"><span class="cell-label">Price:</span>Rp. {{ $material->material_price }}</div>
+            <div class="product-cell sales"><span class="cell-label">Sales:</span>{{ $interior->interior_design_sold }}</div>
+            <div class="product-cell stock"><span class="cell-label">Stock:</span>{{ $interior->interior_design_quantity }}</div>
+            <div class="product-cell price"><span class="cell-label">Price:</span>Rp. {{ $interior->interior_design_price }}</div>
             <div class="product-cell price mt-5"><span class="cell-label">Description :</span>
             </div>
             <div class="text-light mt-2 description">
-                {{ Str::limit($material->material_description,200,'...') }}
+                {{ Str::limit($interior->interior_design_description,200,'...') }}
             </div>
             <div class="text-light text-center descriptions">
                 <button type="button" class="border text-light border-none bg-transparent px-3 py-2 rounded-pill descriptions">
@@ -134,9 +134,9 @@
                 </button>
             </div>
             <div class="text-light mt-2 more-description display-none">
-                {{ $material->material_description }}
+                {{ $interior->interior_design_description }}
             </div>
-        </d>
+        </div>
       </div>
     </div>
   </div>

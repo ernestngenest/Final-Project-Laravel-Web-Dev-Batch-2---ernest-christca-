@@ -20,7 +20,7 @@ class InteriorDesignFactory extends Factory
         return [
             'category_id' => $this->faker->randomNumber(1, \App\Models\Category::count()),
             'interior_design_name' => $this->faker->name(),
-            'interior_design_description' => $this->faker->text(),
+            'interior_design_description' => $this->faker->paragraph(10, mt_rand(20, 30)),
             'interior_design_image' => $this->faker->imageUrl(),
             'interior_design_price' => $this->faker->numberBetween(10000000),
             'interior_design_quantity' => $this->faker->randomNumber(7, false),

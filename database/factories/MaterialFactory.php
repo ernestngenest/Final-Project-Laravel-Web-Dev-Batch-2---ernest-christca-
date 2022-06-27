@@ -23,7 +23,7 @@ class MaterialFactory extends Factory
         return  [
             'category_id' => $this->faker->randomNumber(1, $category_count),
             'material_name' => $this->faker->name(),
-            'material_description' => $this->faker->paragraph(3, mt_rand(3, 7)),
+            'material_description' => $this->faker->paragraph(10, mt_rand(20, 30)),
             'material_image' => $this->faker->imageUrl(500, 500),
             'material_price' => $this->faker->numberBetween(100000, 20000000),
             'status' => $this->faker->randomElement(['Active', 'Disable']),

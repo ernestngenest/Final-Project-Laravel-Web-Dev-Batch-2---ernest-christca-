@@ -40,10 +40,10 @@ class HomeDesignController extends Controller
         $selected_id['name'] = $temp;
         $selected_id['status'] = $request;
         return view(
-            '/dashboard/Components/material',
+            '/dashboard/Components/homedesign',
             [
-                'status' => 'Material',
-                'home' => $material,
+                'status' => 'Home Design',
+                'home_design' => $material,
                 'category' => $category,
                 'selected_id' => $selected_id
             ]
