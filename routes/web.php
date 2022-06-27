@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\RegisterController;
@@ -41,6 +42,7 @@ Route::prefix('/auth')->group(function () {
             Route::get('/interrior/{id}', [InterriorDesignController::class, 'show']);
             Route::get('/home_designs/{id}', [HomeDesignController::class, 'show']);
         });
+        Route::get('/cart/{id}', [CartController::class, 'show']);
     });
 });
 Route::get('/material', [MaterialController::class, 'index']);

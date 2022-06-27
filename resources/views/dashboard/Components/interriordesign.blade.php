@@ -136,6 +136,14 @@
             <div class="text-light mt-2 more-description display-none">
                 {{ $interior->interior_design_description }}
             </div>
+            <div class="text-end align-text-bottom">
+                <form action="">
+                    @csrf
+                    <button class="border text-light border-none bg-transparent px-3 py-2 rounded-pill addtocart buy-btn">
+                        Buy
+                    </button>
+                </form>
+            </div>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ document.querySelector(".grid").addEventListener("click", function () {
     document.querySelector(".list").classList.remove("active");
     document.querySelector(".grid").classList.add("active");
     document.querySelector(".products-area-wrapper").classList.add("gridView");
+    document.querySelector(".addtocart").classList.remove("display-none");
     document.querySelector(".descriptions").classList.remove("display-none");
     document.querySelector(".products-area-wrapper").classList.add("specific");
     document
@@ -23,6 +24,7 @@ document.querySelector(".descriptions").addEventListener("click", function (e) {
 
 document.querySelector(".list").addEventListener("click", function () {
     document.querySelector(".description").classList.remove("display-none");
+    document.querySelector(".addtocart").classList.add("display-none");
     document.querySelector(".more-description").classList.add("display-none");
     document.querySelector(".descriptions").classList.add("display-none");
     document.querySelector(".list").classList.add("active");
